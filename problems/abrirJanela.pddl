@@ -1,4 +1,5 @@
-(define (problem abrirJanela)
+(define
+    (problem abrirJanela)
     (:domain agenteSeguranca)
     (:objects C1 S1 P1 L1 J1)
     (:init

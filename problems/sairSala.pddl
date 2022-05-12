@@ -1,4 +1,5 @@
-(define (problem sairSala)
+(define
+    (problem sairSala)
     (:domain agenteSeguranca)
     (:objects C1 S1 P1)
     (:init

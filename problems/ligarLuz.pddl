@@ -1,4 +1,5 @@
-(define (problem ligarLuz)
+(define
+    (problem ligarLuz)
     (:domain agenteSeguranca)
     (:objects C1 S1 P1 L1)
     (:init

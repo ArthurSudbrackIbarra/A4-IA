@@ -1,4 +1,5 @@
-(define (domain agenteSeguranca)
+(define
+    (domain agenteSeguranca)
     (:requirements
         :strips
     )
