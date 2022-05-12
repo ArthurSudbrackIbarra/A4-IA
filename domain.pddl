@@ -11,6 +11,7 @@
                   (LocalSeguranca ?loc)
     )
     
+    ; Ação - Abrir uma porta.
     (:action abrir  :parameters (?loc ?sala ?porta)
                     :precondition (and (LocalSeguranca ?loc) (Corredor ?loc) (Sala ?sala) (Pertence ?porta ?sala) (not (Aberta ?porta)))
                     :effect (Aberta ?porta)
