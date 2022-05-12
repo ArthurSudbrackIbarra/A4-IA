@@ -15,7 +15,7 @@
     )
     
     ; [Ação - Abrir uma porta]
-    (:action abrirPorta  :parameters (?loc ?sala ?porta)
+    (:action abrir_porta  :parameters (?loc ?sala ?porta)
                     :precondition (and
                         (LocalSeguranca ?loc)
                         (Corredor ?loc) (Sala ?sala)
@@ -42,7 +42,7 @@
                     :effect (and (LocalSeguranca ?sala) (not (LocalSeguranca ?loc)))
     )
     ; [Ação - Sair de uma sala e fechar a porta]
-    (:action sairEFechar  :parameters (?loc ?corr ?porta ?luz)
+    (:action sair_e_fechar  :parameters (?loc ?corr ?porta ?luz)
                     :precondition (and
                         (LocalSeguranca ?loc)
                         (Corredor ?corr)
@@ -58,7 +58,7 @@
     )
     
     ; [Ação - Ligar uma luz]
-    (:action ligarLuz  :parameters (?loc ?luz)
+    (:action ligar_luz  :parameters (?loc ?luz)
                     :precondition (and
                         (LocalSeguranca ?loc)
                         (Sala ?loc)
@@ -69,7 +69,7 @@
                     :effect (Ligada ?luz)
     )
     ; [Ação - Desligar uma luz]
-    (:action desligarLuz  :parameters (?loc ?luz)
+    (:action desligar_luz  :parameters (?loc ?luz)
                     :precondition (and
                         (LocalSeguranca ?loc)
                         (Sala ?loc) (Luz ?luz)
@@ -80,7 +80,7 @@
     )
     
     ; [Ação - Abrir uma janela]
-    (:action abrirJanela  :parameters (?loc ?jan)
+    (:action abrir_janela  :parameters (?loc ?jan)
                     :precondition (and
                         (LocalSeguranca ?loc)
                         (Sala ?loc)
@@ -91,7 +91,7 @@
                     :effect (Aberta ?jan)
     )
     ; [Ação - Fechar uma janela]
-    (:action fecharJanela  :parameters (?loc ?luz ?jan)
+    (:action fechar_janela  :parameters (?loc ?luz ?jan)
                     :precondition (and
                         (LocalSeguranca ?loc)
                         (Sala ?loc)
