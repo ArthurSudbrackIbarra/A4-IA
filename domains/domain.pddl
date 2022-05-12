@@ -28,18 +28,6 @@
                     )
                     :effect (Aberta ?porta)
     )
-    ; [Ação - Fechar uma porta]
-    (:action fecharPorta  :parameters (?loc ?sala ?porta)
-                    :precondition (and
-                        (LocalSeguranca ?loc)
-                        (Corredor ?loc)
-                        (Sala ?sala)
-                        (Porta ?porta)
-                        (Pertence ?porta ?sala)
-                        (Aberta ?porta)
-                    )
-                    :effect (not (Aberta ?porta))
-    )
 
     ; [Ação - Entrar em uma sala]
     (:action entrar  :parameters (?loc ?sala ?porta)
@@ -53,8 +41,8 @@
                     )
                     :effect (and (LocalSeguranca ?sala) (not (LocalSeguranca ?loc)))
     )
-    ; [Ação - Sair de uma sala]
-    (:action sair  :parameters (?loc ?corr ?porta ?luz)
+    ; [Ação - Sair de uma sala e fechar a porta]
+    (:action sairEFechar  :parameters (?loc ?corr ?porta ?luz)
                     :precondition (and
                         (LocalSeguranca ?loc)
                         (Corredor ?corr)
@@ -66,7 +54,7 @@
                         (not (Ligada ?luz))
                         (Pertence ?luz ?loc)
                     )
-                    :effect (and (LocalSeguranca ?corr) (not (LocalSeguranca ?loc)))
+                    :effect (and (LocalSeguranca ?corr) (not (LocalSeguranca ?loc)) (not (Aberta ?porta)))
     )
     
     ; [Ação - Ligar uma luz]
