@@ -1,7 +1,6 @@
 (define (domain agenteSeguranca)
     (:requirements
         :strips
-        :quantified-preconditions
     )
     (:predicates  (Janela ?jan) 
                   (Porta ?porta) 
@@ -36,7 +35,10 @@
                         (Pertence ?porta ?sala)
                         (Aberta ?porta)
                     )
-                    :effect (and (LocalSeguranca ?sala) (not (LocalSeguranca ?loc)))
+                    :effect (and
+                        (LocalSeguranca ?sala)
+                        (not (LocalSeguranca ?loc))
+                    )
     )
     ; [Ação - Sair de uma sala e fechar a porta]
     (:action sair_e_fechar  :parameters (?loc ?corr ?porta ?luz)
@@ -51,7 +53,11 @@
                         (not (Ligada ?luz))
                         (Pertence ?luz ?loc)
                     )
-                    :effect (and (LocalSeguranca ?corr) (not (LocalSeguranca ?loc)) (not (Aberta ?porta)))
+                    :effect (and
+                        (LocalSeguranca ?corr)
+                        (not (LocalSeguranca ?loc))
+                        (not (Aberta ?porta))
+                    )
     )
     
     ; [Ação - Ligar uma luz]
