@@ -6,6 +6,7 @@
            (Porta P1) ; Porta 1.
            (not (Aberta P1)) ; Porta 1 não está aberta
            (Pertence P1 S1) ; Porta 1 pertence à sala 1.
-           (LocalSeguraca C1) ; Segurança está no corredor.
-    (:goal  (and (Aberta P1))) ; Objetivo.
+           (LocalSeguranca C1) ; Segurança está no corredor.
+    )
+    (:goal  (and (LocalSeguranca S1))) ; Objetivo.
 )
