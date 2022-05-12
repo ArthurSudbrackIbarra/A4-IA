@@ -33,4 +33,15 @@
                     :effect (and (LocalSeguranca ?corr) (not (LocalSeguranca ?loc)))
     )
     
+    ; [Ação - Ligar uma luz]
+    (:action ligar  :parameters (?loc ?luz)
+                    :precondition (and (LocalSeguranca ?loc) (Sala ?loc) (Pertence ?luz ?loc) (not (Ligada ?luz)))
+                    :effect (Ligada ?luz)
+    )
+    ; [Ação - Desligar uma luz]
+    (:action desligar  :parameters (?loc ?luz)
+                    :precondition (and (LocalSeguranca ?loc) (Sala ?loc) (Pertence ?luz ?loc) (Ligada ?luz))
+                    :effect (not (Ligada ?luz))
+    )
+    
 )
