@@ -50,8 +50,8 @@
                     :effect (Aberta ?jan)
     )
     ; [Ação - Fechar uma janela]
-    (:action fecharJanela  :parameters (?loc ?jan)
-                    :precondition (and (LocalSeguranca ?loc) (Sala ?loc) (Janela ?jan) (Pertence ?jan ?loc) (Aberta ?jan))
+    (:action fecharJanela  :parameters (?loc ?luz ?jan)
+                    :precondition (and (LocalSeguranca ?loc) (Sala ?loc) (Luz ?luz) (Ligada ?luz) (Pertence ?luz ?loc) (Janela ?jan) (Pertence ?jan ?loc) (Aberta ?jan))
                     :effect (not (Aberta ?jan))
     )
     
