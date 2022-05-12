@@ -27,5 +27,10 @@
                     :precondition (and (LocalSeguranca ?loc) (Corredor ?loc) (Sala ?sala) (Pertence ?porta ?sala) (Aberta ?porta))
                     :effect (and (LocalSeguranca ?sala) (not (LocalSeguranca ?loc)))
     )
+    ; [Ação - Sair de uma sala]
+    (:action sair  :parameters (?loc ?corr ?porta)
+                    :precondition (and (LocalSeguranca ?loc) (Corredor ?corr) (Sala ?loc) (Pertence ?porta ?loc) (Aberta ?porta))
+                    :effect (and (LocalSeguranca ?corr) (not (LocalSeguranca ?loc)))
+    )
     
 )
